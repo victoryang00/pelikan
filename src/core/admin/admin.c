@@ -1,6 +1,9 @@
 #include "admin.h"
 
 #include "core/context.h"
+bool admin_init;
+bool server_init;
+bool worker_init;
 
 #include "protocol/admin/admin_include.h"
 #include "util/util.h"

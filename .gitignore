@@ -54,4 +54,9 @@ CMAKE_BINARY_DIR
 .cargo
 
 # Cargo build directory
-/target
+target
+
+sb
+build
+.vscode
+Cargo.lock

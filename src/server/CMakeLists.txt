@@ -1,9 +1,5 @@
 if(TARGET_PINGSERVER)
     add_subdirectory(pingserver)
-
-    if (HAVE_RUST)
-        add_subdirectory(pingserver-rs)
-    endif()
 endif()
 
 if(TARGET_HTTP)

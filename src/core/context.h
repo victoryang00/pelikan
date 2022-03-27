@@ -1,5 +1,5 @@
-#pragma once
-
+#ifndef CONTEXT
+#define CONTECT
 /* this file is for internal use only by the core module */
 
 #include <stdbool.h>
@@ -10,7 +10,8 @@ struct context {
     struct event_base *evb;
     int timeout;
 };
+extern bool admin_init;
+extern bool server_init;
+extern bool worker_init;
 
-bool admin_init;
-bool server_init;
-bool worker_init;
+#endif

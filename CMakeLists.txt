@@ -293,3 +293,7 @@ endif()
 # Note: to uninstall targets, run:
 #  xargs rm < install_manifest.txt
 # vim:ts=4:sw=4:et
+if (HAVE_RUST)
+    # add_subdirectory(rust ${PROJECT_BINARY_DIR}/rust)
+    cargo_build(NAME pelikan_rs)
+endif()

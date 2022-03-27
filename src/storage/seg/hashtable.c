@@ -11,7 +11,7 @@
 #include <stdlib.h>
 #include <sys/mman.h>
 #include <sysexits.h>
-#include <x86intrin.h>
+#include <arm_neon.h>
 
 /* TODO(jason): use static allocated array
  * TODO(jason): add bucket array shrink

@@ -75,8 +75,8 @@ unsafe impl Sync for Gauge {}
 unsafe impl SingleMetric for Gauge {
     fn new(name: &CStr, desc: &CStr) -> Self {
         Self(metric {
-            name: name.as_ptr() as *mut i8,
-            desc: desc.as_ptr() as *mut i8,
+            name: name.as_ptr() as *mut u8,
+            desc: desc.as_ptr() as *mut u8,
             type_: METRIC_GAUGE,
             data: metric_anon_union::gauge(0),
         })
@@ -93,8 +93,8 @@ unsafe impl SingleMetric for Gauge {
 impl fmt::Debug for Gauge {
     fn fmt(&self, fmt: &mut fmt::Formatter) -> fmt::Result {
         fmt.debug_struct("Counter")
-            .field("name", unsafe { &CStr::from_ptr(self.0.name as *const i8) })
-            .field("desc", unsafe { &CStr::from_ptr(self.0.desc as *const i8) })
+            .field("name", unsafe { &CStr::from_ptr(self.0.name as *const u8) })
+            .field("desc", unsafe { &CStr::from_ptr(self.0.desc as *const u8) })
             .field("counter", &self.value())
             .finish()
     }

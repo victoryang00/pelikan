@@ -30,7 +30,7 @@ use std::io::{BufRead, Error as IOError};
 
 macro_rules! c_str {
     ($s:expr) => {
-        concat!($s, "\0").as_ptr() as *const i8
+        concat!($s, "\0").as_ptr() as *const u8
     };
 }
 
@@ -417,7 +417,7 @@ unsafe fn set_option_value(option: &mut option, value: Value) -> Result<(), Pars
             // Add nul terminator
             std::ptr::write(mem.wrapping_add(v.len()), MaybeUninit::new(0));
 
-            option.val.vstr = mem as *mut i8
+            option.val.vstr = mem as *mut u8
         }
     }
 

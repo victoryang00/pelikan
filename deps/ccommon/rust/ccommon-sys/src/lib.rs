@@ -57,5 +57,5 @@ pub unsafe fn option_fpn(opt: *mut option) -> f64 {
 }
 
 pub unsafe fn option_str(opt: *mut option) -> *mut i8 {
-    return (*opt).val.vstr;
+    return (*opt).val.vstr as  *mut i8;
 }

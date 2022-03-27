@@ -295,7 +295,7 @@ mod impls {
 
         impl Options for debug_options_st {
             ACTION( debug_log_level, OPTION_TYPE_UINT, DEBUG_LOG_LEVEL,  "debug log level"     )
-            ACTION( debug_log_file,  OPTION_TYPE_STR,  DEBUG_LOG_FILE,   "debug log file"      )
+            ACTION( debug_log_file,  OPTION_TYPE_STR,  DEBUG_LOG_FILE as * mut u8,   "debug log file"      )
             ACTION( debug_log_nbuf,  OPTION_TYPE_UINT, DEBUG_LOG_NBUF,   "debug log buf size"  )
         }
 
